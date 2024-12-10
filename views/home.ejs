@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Title and page links-->
+    <title>SuperMeets</title>
+    <link rel="stylesheet" href="/styles/home.css" />
+    <!--link to boxicons-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+    />
+    <!--Upload Favicon by Force-->
+    <script>
+      const link = document.createElement("link");
+      link.rel = "icon";
+      link.href = "/images/OIP.jpg";
+      document.head.appendChild(link);
+    </script>
+  </head>
+  <body>
+    <!--Top bar where header/logo is-->
+    <header id="topbar">
+      <div id="logo">SuperMeets</div>
+      <!--Tabs for pages-->
+      <div id="tabs">
+        <a href="/home"><label>Home</label></a>
+        <a href="/create-meet"><label>Create Meet</label></a>
+        <a href="/upcoming-meets"><label>Upcoming meets</label></a>
+      </div>
+    </header>
+
+    <!--Main content (The center form)-->
+    <div id="main">
+      <h1>Welcome to SuperMeets!</h1>
+      <form id="car" method="POST" action="/submit">
+        <div id="about">
+          <h2>About SuperMeets</h2>
+          <p>
+            SuperMeets is the ultimate hub for car enthusiasts to connect, share
+            and organize unforgettable events. Whether you're showcasing your
+            ride or discovering the latest trends in the car community,
+            SuperMeets makes it simple and fun. Join us to create, explore, and
+            celebrate everything cars with fellow enthusiasts!
+          </p>
+        </div>
+        <!--onclick added so app doesnt crash. creates a new /create-meet brower that will be
+        navigated to that. It app.gets that current url and return it.-->
+        <button type="button" onclick="window.location.href='/create-meet'">Create a Meet</button>
+
+      <!--Created a social section under the button
+    favicons are linked to the actual websites-->
+      <div class="social">
+        <h2>Follow us on Socialmedia!</h2>
+        <a href="https://facebook.com" style="--i: 1"
+          ><i class="bx bxl-facebook"></i
+        ></a>
+        <a href="https://instagram.com" style="--i: 2"
+          ><i class="bx bxl-instagram"></i
+        ></a>
+        <a href="https://whatsapp.com" style="--i: 3"
+          ><i class="bx bxl-whatsapp"></i
+        ></a>
+        <a href="https://tiktok.com" style="--i: 4"
+          ><i class="bx bxl-tiktok"></i
+        ></a>
+      </div>
+    </div>
+    <!--Created a copright line in the footer-->
+    <footer>
+      <%= new Date().getFullYear() %> © SUPERMEETS. All rights reserved.
+    </footer>
+   </form>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create-Meet</title>
+    <link rel="icon" href="/images/OIP.jpg" type="image/jpeg" />
+    <link rel="stylesheet" href="/styles/home.css" />
+  </head>
+  <body>
+    <!--Header/logo-->
+    <header id="topbar">
+      <div id="logo">SuperMeets</div>
+      <!--Tabs-->
+      <div id="tabs">
+        <a href="/home"><label>Home</label></a>
+        <a href="/create-meet"><label>Create Meet</label></a>
+        <a href="/upcoming-meets"><label>Upcoming meets</label></a>
+      </div>
+    </header>
+
+    <!--Main content (center form)-->
+    <div id="main">
+      <h1>Welcome to SuperMeets!</h1>
+      <h3>Please add your details to create an event.</h3>
+      <form id="car" method="POST" action="/submit">
+        <!-- First Name -->
+        <div class="field-row">
+          <div>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="first_name" required />
+          </div>
+
+          <!-- Last Name -->
+          <div>
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="last_name" required />
+          </div>
+
+          <!-- Event Name -->
+          <div>
+            <label for="ename">Event Name</label>
+            <input type="text" id="ename" name="event_name" required />
+          </div>
+        </div>
+        <!-- Location -->
+        <div class="field-row">
+          <div>
+            <label for="loc">Location</label>
+            <input type="text" id="loc" name="location" required />
+          </div>
+
+          <!-- Vehicle Name -->
+          <div>
+            <label for="vname">Vehicle Name</label>
+            <input type="text" id="vname" name="vehicle_name" required />
+          </div>
+
+          <!-- Car Category -->
+          <div>
+            <label for="category">Car Category</label>
+            <select id="category" name="car_category" required>
+              <option value="" disabled selected>Select a category</option>
+              <option value="USDM">USDM</option>
+              <option value="JDM">JDM</option>
+              <option value="European">European</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="event-date">Event Date</label>
+          <input type="date" id="event-date" name="event_date" required />
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label for="msg">Comment</label>
+          <textarea id="msg" name="message"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Sign up</button>
+      </form>
+    </div>
+
+    <!--Created a copright line in the footer-->
+    <footer>
+      <%= new Date().getFullYear() %> © SUPERMEETS. All rights reserved.
+    </footer>
+  </body>
+</html>

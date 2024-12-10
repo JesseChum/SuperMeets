@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upcoming Meets</title>
+    <link rel="icon" href="/images/OIP.jpg" type="image/jpeg" />
+    <link rel="stylesheet" href="/styles/home.css" />
+  </head>
+  <body>
+    <!--Header/logo-->
+    <header id="topbar">
+      <div id="logo">SuperMeets</div>
+
+      <!--Tabs for pages-->
+      <div id="tabs">
+        <a href="/home"><label>Home</label></a>
+        <a href="/create-meet"><label>Create Meet</label></a>
+        <a href="/upcoming-meets"><label>Upcoming meets</label></a>
+      </div>
+    </header>
+    <!--Upcoming meets that shows data from the database-->
+    <div id="main">
+      <h1>Upcoming Meets</h1>
+      <% details.forEach(data => { %>
+      <div class="meet">
+        <h2><%= data.event_name %></h2>
+        <p><strong>Location:</strong> <%= data.location %></p>
+        <p><strong>Vehicle:</strong> <%= data.vehicle_name %></p>
+        <p><strong>Car Category:</strong> <%= data.car_category %></p>
+        <p><strong>Message:</strong> <%= data.message %></p>
+        <p>
+          <strong>Organizer:</strong> <%= data.first_name %> <%=data.last_name
+          %>
+        </p>
+        <p>
+          <strong>Event Date:</strong> <%= new
+          Date(data.event_date).toLocaleDateString() %>
+        </p>
+        <p>
+          <!--date posted when a meet is made-->
+          <em>
+            Posted on: <%= new Date(data.created_at).toLocaleDateString() %>
+          </em>
+        </p>
+        <!--Created button and added delete function-->
+        <form action="/delete-entry/<%= data.id %>" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>
