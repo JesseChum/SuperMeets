@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Title and page links-->
+    <title>SuperMeets</title>
+    <link rel="stylesheet" href="/styles/home.css" />
+    <!--link to boxicons-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+    />
+    <!--Upload Favicon by Force-->
+    <script>
+      const link = document.createElement("link");
+      link.rel = "icon";
+      link.href = "/images/OIP.jpg";
+      document.head.appendChild(link);
+    </script>
+  </head>
+  <body>
+    <!--Top bar where header/logo is-->
+    <header id="topbar">
+      <div id="logo">SuperMeets</div>
+      <!--Tabs for pages-->
+      <div id="tabs">
+        <a href="/home"><label>Home</label></a>
+        <a href="/create-meet"><label>Create Meet</label></a>
+        <a href="/upcoming-meets"><label>Upcoming meets</label></a>
+      </div>
+    </header>
+
+    <!--Main content (The center form)-->
+    <div id="main">
+      <form id="car" method="POST" action="/submit">
+        <div id="confirm">
+        <h1>Thankyou for your submission</h1>
+        <h2>Navigate to the Upcoming Meets tab to see your submission</h2>
+    </div>
+    <!--Created a copright line in the footer-->
+    <footer>
+      © <%= new Date().getFullYear() %> SUPERMEETS. All rights reserved.
+    </footer>
+   </form>
+  </body>
+</html>

@@ -61,6 +61,11 @@ app.get("/upcoming-meets", (req, res) => {
   res.render("upcoming-meets");
 });
 
+//app.get for confirmation page and rendering it
+app.get("/confirmation", (req, res) => {
+  res.render("confirmation");
+});
+
 app.post("/submit", async (req, res) => {
   const data = req.body;
   const errors = [];
@@ -93,6 +98,7 @@ app.post("/submit", async (req, res) => {
   ("${data.first_name}", "${data.last_name}", "${data.event_name}", "${data.location}", "${data.vehicle_name}", "${data.car_category}",
      "${data.event_date}", "${data.message}")`
   );
+  res.redirect("/confirmation");
 
   // Display the confirm page, pass the data
   console.log(data);
